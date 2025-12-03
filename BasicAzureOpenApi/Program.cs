@@ -26,16 +26,15 @@ builder.Services.AddSingleton(p =>
     var option = p.GetRequiredService<IOptions<OpenAIOptions>>().Value;
     var azureClient = p.GetRequiredService<AzureOpenAIClient>();
     return azureClient.GetChatClient(option.DeploymentName);
-
 });
 
 var app = builder.Build();
 
 var chatClient = app.Services.GetRequiredService<ChatClient>();
-var messages = new List<ChatMessage>()
+var messages = new List<ChatMessage>
 {
     new SystemChatMessage("貴方はC#プログラマーです"),
-    new UserChatMessage("Microsoft.Extensions.AI.OpenAIを使ったサンプルコードを書いてください"),
+    new UserChatMessage("Microsoft.Extensions.AI.OpenAIを使ったサンプルコードを書いてください")
 };
 
 var response = chatClient.CompleteChat(messages);

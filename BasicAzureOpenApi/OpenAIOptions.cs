@@ -1,6 +1,6 @@
 namespace BasicAzureOpenApi;
 
-public class OpenAIOptions
+public sealed class OpenAIOptions
 {
     public string EndPoint { get; set; } = default!;
 

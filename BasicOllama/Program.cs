@@ -2,7 +2,7 @@ using Microsoft.Extensions.AI;
 
 using OllamaSharp;
 
-var chatClient = new OllamaApiClient(new Uri("http://ollama:11434/"), "gpt-oss:20b");
+using var chatClient = new OllamaApiClient(new Uri("http://ollama:11434/"), "gpt-oss:20b");
 
 while (true)
 {

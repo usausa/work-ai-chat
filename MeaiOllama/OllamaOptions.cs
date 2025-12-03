@@ -1,6 +1,6 @@
 namespace MeaiOllama;
 
-public class OllamaOptions
+public sealed class OllamaOptions
 {
     public string BaseUrl { get; set; } = default!;
 

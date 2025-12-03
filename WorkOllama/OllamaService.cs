@@ -1,12 +1,13 @@
 namespace WorkOllama;
 
 using System.Runtime.CompilerServices;
+
 using Microsoft.Extensions.Options;
 
 using OllamaSharp;
 using OllamaSharp.Models;
 
-public class OllamaOptions
+public sealed class OllamaOptions
 {
     public const string SectionName = "Ollama";
 
@@ -24,7 +25,7 @@ public interface IOllamaService
     Task<IEnumerable<string>> GetAvailableModelsAsync(CancellationToken cancellationToken = default);
 }
 
-public class OllamaService : IOllamaService
+public sealed class OllamaService : IOllamaService, IDisposable
 {
     private readonly OllamaApiClient client;
 
@@ -39,6 +40,11 @@ public class OllamaService : IOllamaService
         {
             SelectedModel = this.options.Model
         };
+    }
+
+    public void Dispose()
+    {
+        client.Dispose();
     }
 
     public async IAsyncEnumerable<string> GenerateStreamAsync(string prompt, [EnumeratorCancellation] CancellationToken cancellationToken = default)

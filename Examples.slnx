@@ -2,7 +2,7 @@
   <Folder Name="/Aspire/" />
   <Folder Name="/Blazor/" />
   <Folder Name="/Chat/">
-    <Project Path="BasicAwsBedrock/BasicAwsBedrock.csproj"/>
+    <Project Path="BasicAwsBedrock/BasicAwsBedrock.csproj" />
     <Project Path="BasicAzureOpenApi/BasicAzureOpenApi.csproj" />
     <Project Path="BasicOllama/BasicOllama.csproj" />
   </Folder>
@@ -11,5 +11,15 @@
   </Folder>
   <Folder Name="/MCP/" />
   <Folder Name="/RAG/" />
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitattributes" />
+    <File Path=".gitignore" />
+    <File Path="Analyzers.ruleset" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Build.targets" />
+    <File Path="README.md" />
+    <File Path="Examples.sln.DotSettings" />
+  </Folder>
   <Project Path="WorkOllama/WorkOllama.csproj" />
 </Solution>

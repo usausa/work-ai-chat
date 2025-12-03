@@ -1,11 +1,11 @@
+using MeaiOllama;
+
 using Microsoft.Extensions.AI;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 
 using OllamaSharp;
-
-using MeaiOllama;
 
 var builder = Host.CreateApplicationBuilder();
 
@@ -14,7 +14,6 @@ builder.Services.AddChatClient(p =>
 {
     var option = p.GetRequiredService<IOptions<OllamaOptions>>().Value;
     return new OllamaApiClient(new Uri(option.BaseUrl), option.Model);
-
 });
 
 var app = builder.Build();

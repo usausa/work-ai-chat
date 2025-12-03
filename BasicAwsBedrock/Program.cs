@@ -1,16 +1,14 @@
-using System.Diagnostics;
-
 using Amazon.BedrockRuntime;
 using Amazon.BedrockRuntime.Model;
 
 #pragma warning disable BedrockRuntime1002 // Property value does not match required pattern
-const string ModelId = "jp.anthropic.claude-sonnet-4-5-20250929-v1:0";
+const string modelId = "jp.anthropic.claude-sonnet-4-5-20250929-v1:0";
 
-var client = new AmazonBedrockRuntimeClient();
+using var client = new AmazonBedrockRuntimeClient();
 
 var request = new ConverseStreamRequest
 {
-    ModelId = ModelId,
+    ModelId = modelId,
     Messages =
     [
         new Message
